@@ -21,7 +21,7 @@ ADD . /app
 WORKDIR /app
 
 # "configure nginx"
-RUN "/usr/bin/erb /app/nginx.conf.erb | tee /etc/nginx/nginx.conf"
+# RUN "/usr/bin/erb /app/nginx.conf.erb | tee /etc/nginx/nginx.conf"
 # clean things
 RUN "cd /app && rm -rf node_modules"
 RUN "cd /app && npm cache clean"
