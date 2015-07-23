@@ -2,6 +2,8 @@ FROM ubuntu:trusty
 MAINTAINER Ben West <bewest@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV INTERNAL_PORT=3737
+ENV PORT=4747
 
 RUN apt-get update -y
 RUN apt-get install -y wget curl git -y
