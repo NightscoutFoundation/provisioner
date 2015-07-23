@@ -21,11 +21,11 @@ ADD . /app
 WORKDIR /app
 
 # "configure nginx"
-# RUN "/usr/bin/erb /app/nginx.conf.erb | tee /etc/nginx/nginx.conf"
+RUN erb nginx.conf.erb | tee /etc/nginx/nginx.conf
 # clean things
-RUN "cd /app && rm -rf node_modules"
-RUN "cd /app && npm cache clean"
-RUN "cd /app && npm install"
+RUN cd /app && rm -rf node_modules
+RUN cd /app && npm cache clean
+RUN cd /app && npm install
 EXPOSE 4747
 EXPOSE 3737
 RUN /app/setup_docker_guest.sh
