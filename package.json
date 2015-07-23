@@ -1,11 +1,12 @@
 {
-  "name": "ns-provisioner",
+  "name": "nightscout-provisioner",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Ben West <bewest@gmail.com>",
   "license": "BSD3",
   "dependencies": {
     "bootevent": "0.0.1",
@@ -14,5 +15,15 @@
     "mongoose-encrypt": "0.0.1-alpha.3",
     "request": "^2.60.0",
     "restify": "^3.0.3"
-  }
+  },
+  "description": "Used to allocate resources for accounts.",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NightscoutFoundation/provisioner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NightscoutFoundation/provisioner/issues"
+  },
+  "homepage": "https://github.com/NightscoutFoundation/provisioner"
 }
