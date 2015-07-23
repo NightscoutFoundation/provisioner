@@ -9,7 +9,10 @@
   "license": "BSD3",
   "dependencies": {
     "bootevent": "0.0.1",
+    "bunyan": "^1.4.0",
     "mongoose": "^4.0.8",
+    "mongoose-encrypt": "0.0.1-alpha.3",
+    "request": "^2.60.0",
     "restify": "^3.0.3"
   }
 }
