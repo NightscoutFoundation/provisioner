@@ -23,8 +23,8 @@ WORKDIR /app
 # "configure nginx"
 RUN erb nginx.conf.erb | tee /etc/nginx/nginx.conf
 # clean things
-RUN cd /app && rm -rf node_modules
-RUN cd /app && npm cache clean
+# RUN cd /app && rm -rf node_modules
+# RUN cd /app && npm cache clean
 RUN cd /app && npm install
 EXPOSE 4747
 EXPOSE 3737
