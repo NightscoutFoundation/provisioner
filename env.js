@@ -10,7 +10,7 @@ exports = module.exports = {
   , PREFIX: {
     NAME: process.env.HOSTED_NAME_PREFIX || "hosted-"
   , CRED: process.env.HOSTED_CRED_PREFIX || "hosted."
-  , COLLECTION: process.env.HOSTED_COLLECTION_PREFIX || "hosted."
+  , COLLECTION: process.env.HOSTED_COLLECTION_PREFIX || "A."
   }
   , mongo_suite: {
     ADDR: process.env.HOSTED_MONGO_ADDR || "localhost"
