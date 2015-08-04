@@ -30,7 +30,7 @@ EXPOSE 4747
 EXPOSE 3737
 RUN /app/setup_docker_guest.sh
 # forward request and error logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
+# RUN ln -sf /dev/stdout /var/log/nginx/access.log
+# RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 CMD /app/start_container.sh
