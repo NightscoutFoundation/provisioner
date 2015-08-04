@@ -6,13 +6,26 @@ function createServer (opts) {
   if (opts) {
     opts.handleUpgrades = true;
   }
+  var logger = bunyan.createLogger({ name: 'provisioner', level: 'info'
+    , serializers: {
+    req: bunyan.stdSerializers.req,
+    // res: restify.bunyan.serializers.response
+    }
+  });
+  if (!'log' in opts) {
+    opts.log = logger;
+  }
+
   var server = restify.createServer(opts);
+
   server.on('after', restify.auditLogger({
     log: bunyan.createLogger({
       name: 'audit',
+      level: 'info',
       stream: process.stdout
     })
   }));
+
 
   server.use(restify.dateParser());
   server.use(restify.queryParser());
@@ -61,12 +74,14 @@ function createServer (opts) {
   server.del('/accounts/:account/sites/:site', account.by_account, sites.find_by_name, admin.adminUser, sites.remove_by_site, sites.format);
   server.post('/accounts/:account/sites', account.by_account, admin.adminUser
         , user.suggest
+        , user.lookup_prexists
         , user.create
         , sites.suggest
         , sites.create
         , sites.format);
   server.post('/accounts/:account/sites/:name', account.by_account, admin.adminUser
         , user.suggest
+        , user.lookup_prexists
         , user.create
         , sites.suggest
         , sites.create
